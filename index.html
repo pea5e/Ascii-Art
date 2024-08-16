@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascii Art</title>
+    <style>
+        html,body{
+            width:100%;
+            height: 100%;
+        }
+        .slider {
+        -webkit-appearance: none;
+        width: 350px;
+        height: 25px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+        }
+
+        .slider:hover {
+        opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        background: #474747;
+        cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        background: #474747;
+        cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header><code><pre> 
+         .d8b.  .d8888.  .o88b. d888888b d888888b       .d8b.  d8888b. d888888b 
+        d8' `8b 88'  YP d8P  Y8   `88'     `88'        d8' `8b 88  `8D `~~88~~' 
+        88ooo88 `8bo.   8P         88       88         88ooo88 88oobY'    88    
+        88~~~88   `Y8b. 8b         88       88         88~~~88 88`8b      88    
+        88   88 db   8D Y8b  d8   .88.     .88.        a8   88 88 `88.    88    
+        YP   YP `8888Y'  `Y88P' Y888888P Y888888P      YP   YP 88   YD    YP                                                                
+    </pre></code></header>
+    <canvas></canvas>
+    <input type="file" accept=".jpg,.jpeg,.png">
+    <input type="range"  class="slider" min="20" max="100" value="100"> 
+    <p></p>
+    <br>
+    <code><pre></pre></code>
+    <script src="paag.js"></script>
+</body>
+</html>
