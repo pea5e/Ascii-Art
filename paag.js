@@ -38,7 +38,7 @@ input.addEventListener('change',async function draw() {
     const shadow = document.getElementById("ascii").value;
     const asciiArt = document.getElementById("ascii_art");
     const sh = (6-range.value)*5
-    const sw = (6-range.value)*4
+    const sw = (6-range.value)*3
     // const sh = 5
     // const sw = 3
     const light = lightdetect.value
