@@ -33,6 +33,17 @@ input.addEventListener('change',async function draw() {
         var canvas = document.querySelector("canvas");
         canvas.width = img.width;
         canvas.height = img.height;
+        if(canvas.width>300)
+        {
+            canvas.width = 300;
+            canvas.height = (300/img.width)*img.height;
+        }
+        if(canvas.height>300)
+        {
+                canvas.height = 300;
+                canvas.width = (300/img.height)*img.width;
+        }
+
         var ctx = canvas.getContext("2d");
         ctx.fillStyle = '#FFF';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
