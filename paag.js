@@ -21,8 +21,11 @@ const lightdetect = document.getElementsByClassName('slider')[1];
 
 input.addEventListener('change',async function draw() {
     const asciiArt = document.getElementById("ascii_art");
-    const sh = (101-range.value)*5
-    const sw = (101-range.value)*3
+    // const sh = (101-range.value)*5
+    // const sw = (101-range.value)*3
+    const sh = 5
+    const sw = 3
+    const light = lightdetect.value
     const avg = lightdetect.value/shadow.length;
     asciiArt.innerText = ""
     const base64 = await toBase64(input.files[0]);
@@ -55,12 +58,12 @@ input.addEventListener('change',async function draw() {
             {
                 var data = ctx.getImageData(x, y, sw, sh).data; 
                 var color=0;
-                for(let i=0;i<15;i++)
+                for(let i=0;i<sh*sw;i++)
                 {
                     color += data[i*4];
                 }
-                color = color/15|0;
-                if(color<=160)
+                color = color/(sh*sw)|0;
+                if(color<=light)
                 {
                     asciiArt.innerText += shadow.charAt(color/avg|0);
                 }
