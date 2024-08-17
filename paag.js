@@ -1,7 +1,4 @@
 
-const shadow = "@&%QWNM0gB$#DR8mHXKAUbGOpV4d9h6PkqwSE2]ayjxY5Zoen[ult13If}C{iF|(7J)vTLs?z/*cr!+<>;=^,_:'-.` "
-
-
 
 
 async function toBase64(file) {
@@ -13,18 +10,37 @@ async function toBase64(file) {
     });
 }
 
+document.getElementsByTagName("pre")[0].innerText = `
+           %                                                        2t                   (         
+           Uk                                                       {%                    Q         
+           Qi                                                       ug                    @         
+          L@D                                                       0@=                   @         
+          DL0'                               74    fd              7b19                   @         
+         /m [E        zRItX|      <Pw=      __    z                B_ %      .            @?        
+         #<  %       vm          }U  b}     .S    L1              (G  hC     O(-6dXl    [x%jv       
+        TA   AxT     M          ;$          <D    3w              0.  r$v    9&o   (R_    $'        
+        gaIhG9Q     Kv          $=          <D    3w             fB7ybP0[    9}           R<        
+       QK/    g'    @   'lUBb  ;#           <D    3w            d@3'   }9    q3           Kc        
+       N      1k    iOO27  Dr  x5           <D    3w            5]      %    wt           K/        
+      oE       %          Xi   E1      >B   <D    3w            Q       wl   oo           4| (*     
+      Q        9}   >4r!nm_     B/    ]p    <D    3w           we       -0   3E           :gam      
+      -        >#     _;         vy9SI       :                 _         #>                         
+                X                                                        ie                    `
 const input = document.querySelector('input');
 const range = document.getElementsByClassName('slider')[0];
 const lightdetect = document.getElementsByClassName('slider')[1];
 
-
+input.addEventListener('click',()=>{
+    input.value = ""
+})
 
 input.addEventListener('change',async function draw() {
+    const shadow = document.getElementById("ascii").value;
     const asciiArt = document.getElementById("ascii_art");
-    // const sh = (101-range.value)*5
-    // const sw = (101-range.value)*3
-    const sh = 5
-    const sw = 3
+    const sh = (6-range.value)*4
+    const sw = (6-range.value)*3
+    // const sh = 5
+    // const sw = 3
     const light = lightdetect.value
     const avg = lightdetect.value/shadow.length;
     asciiArt.innerText = ""

@@ -9,6 +9,17 @@
             width:100%;
             height: 100%;
         }
+        header{
+            font-size: 8px;
+            display: flex;
+            justify-content: center;
+        }
+        form{
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
         label{
             /*display: none;*/
         }
@@ -46,20 +57,28 @@
     </style>
 </head>
 <body>
-    <header><code><pre> 
-         .d8b.  .d8888.  .o88b. d888888b d888888b       .d8b.  d8888b. d888888b 
-        d8' `8b 88'  YP d8P  Y8   `88'     `88'        d8' `8b 88  `8D `~~88~~' 
-        88ooo88 `8bo.   8P         88       88         88ooo88 88oobY'    88    
-        88~~~88   `Y8b. 8b         88       88         88~~~88 88`8b      88    
-        88   88 db   8D Y8b  d8   .88.     .88.        a8   88 88 `88.    88    
-        YP   YP `8888Y'  `Y88P' Y888888P Y888888P      YP   YP 88   YD    YP                                                                
-    </pre></code></header>
-    <canvas></canvas>
-    <input type="file" accept=".jpg,.jpeg,.png">
-    <label>Size:</label>
-    <input type="range"  class="slider" min="20" max="100" value="99"> 
-    <label>Light detection:</label>
-    <input type="range"  class="slider" min="30" max="255" value="200"> 
+    <header>
+        <code><pre>                                                                                                                                            
+        </pre></code>
+    </header>
+    <form>
+        <canvas></canvas>
+        <div>
+            <input type="file" accept=".jpg,.jpeg,.png">
+        </div>
+        <label>Size:</label>
+        <div>
+            <input type="range"  class="slider" min="1" max="5" value="5">
+        </div>
+        <label>Light detection:</label> 
+        <div>
+            <input type="range"  class="slider" min="30" max="255" value="200"> 
+        </div>
+        <label>Ascii Chain:</label>
+        <div style="width: 80%;">
+            <input type="text" style="width: 80%;" id="ascii" value="@&%QWNM0gB$#DR8mHXKAUbGOpV4d9h6PkqwSE2]ayjxY5Zoen[ult13If}C{iF|(7J)vTLs?z/*cr!+<>;=^,_:'-. "/>
+        </div>
+    </form>
     <p></p>
     <br>
     <code><pre id="ascii_art"></pre></code>
