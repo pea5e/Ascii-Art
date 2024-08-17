@@ -1,5 +1,5 @@
 
-const shadow = " `.-':_,^=;><+!rc*/z?sLTv)J7(|Fi{C}fI31tlu[neoZ5Yxjya]2ESwqkP6h9d4VpOGbUAKXHm8RD#$Bg0MNWQ%&@"
+const shadow = "@&%QWNM0gB$#DR8mHXKAUbGOpV4d9h6PkqwSE2]ayjxY5Zoen[ult13If}C{iF|(7J)vTLs?z/*cr!+<>;=^,_:'-.` "
 
 
 
@@ -38,23 +38,25 @@ input.addEventListener('change',async function draw() {
         canvas.height = img.height;
         if(canvas.width>300)
         {
+            canvas.height = (300/canvas.width)*canvas.height;
             canvas.width = 300;
-            canvas.height = (300/img.width)*img.height;
         }
         if(canvas.height>300)
         {
+                canvas.width = (300/canvas.height)*canvas.width;
                 canvas.height = 300;
-                canvas.width = (300/img.height)*img.width;
         }
 
         var ctx = canvas.getContext("2d");
         ctx.fillStyle = '#FFF';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.globalCompositeOperation = 'luminosity';
-        ctx.drawImage(img, 0, 0);
-        for(let y=0;y<img.height;y+=sh)
+        ctx.drawImage(img, 0, 0,canvas.width,canvas.height);
+        // asciiArt.style.width = canvas.width+' px';
+        for(let y=0;y<canvas.height;y+=sh)
         {
-            for(let x=0;x<img.width;x+=sw)
+            // asciiArt.innerHTML += "<pre>";
+            for(let x=0;x<canvas.width;x+=sw)
             {
                 var data = ctx.getImageData(x, y, sw, sh).data; 
                 var color=0;
@@ -72,7 +74,8 @@ input.addEventListener('change',async function draw() {
                     asciiArt.innerText += ' ';
                 }
             }
-            asciiArt.innerText += '\n';
+            asciiArt.innerText += '\n'
+            // asciiArt.innerHTML += '</pre.<br/>';
         }
 
     }
